@@ -1,0 +1,49 @@
+#!/bin/bash
+
+echo '====================================================================='
+echo '                             UPDATES'
+echo '====================================================================='
+mkdir -p /var/www/html/pub/fedora/linux/updates/25/x86_64/
+cd /var/www/html/pub/fedora/linux/updates/25/x86_64/
+echo 'updating '$(pwd)
+#rsync -avh --progress --delete --exclude=debug* rsync://mirror.aarnet.edu.au/pub/fedora/linux/updates/25/x86_64/ .
+#rsync -avh --progress --delete --exclude=debug* rsync://ftp.iinet.net.au//pub/fedora/linux/updates/25/x86_64/ .
+rsync -avh --progress --delete --exclude=debug* rsync://ftp.iinet.net.au/redhat-fedora/updates/25/x86_64/ .
+chcon -R -t httpd_sys_content_t /var/www/html/pub/fedora/linux/updates
+
+#echo '====================================================================='
+#echo ' =                          WORKSTATION'
+#echo '====================================================================='
+#mkdir -p /var/www/html/pub/fedora/linux/releases/25/Workstation/x86_64/
+#cd /var/www/html/pub/fedora/linux/releases/25/Workstation/x86_64
+#echo 'updating '$(pwd)
+#rsync -avh --progress --delete --exclude=debug* rsync://mirror.aarnet.edu.au/pub/fedora/linux/releases/25/Workstation/x86_64/ .
+##rsync -avh --progress --delete --exclude=debug* rsync://ftp.iinet.net.au//pub/fedora/linux/releases/25/Workstation/x86_64/ .
+#rsync -avh --progress --delete --exclude=debug* rsync://ftp.iinet.net.au/redhat-fedora/releases/25/Workstation/x86_64/ .
+#chcon -R -t httpd_sys_content_t /var/www/html/pub/fedora/linux/releases/25/Workstation
+
+
+#echo '====================================================================='
+#echo '                              SERVER'
+#echo '====================================================================='
+#mkdir -p /var/www/html/pub/fedora/linux/releases/25/Server/x86_64/
+#cd /var/www/html/pub/fedora/linux/releases/25/Server/x86_64
+#echo 'updating '$(pwd)
+#rsync -avh --progress --delete --exclude=debug* rsync://mirror.aarnet.edu.au/pub/fedora/linux/releases/25/Server/x86_64/ .
+#rsync -avh --progress --delete --exclude=debug* rsync://ftp.iinet.net.au//pub/fedora/linux/releases/25/Server/x86_64/ .
+#rsync -avh --progress --delete --exclude=debug* rsync://ftp.iinet.net.au/redhat-fedora/releases/25/Server/x86_64/ .
+#chcon -R -t httpd_sys_content_t /var/www/html/pub/fedora/linux/releases/25/Server
+
+
+echo '====================================================================='
+echo '                            EVERYTHING'
+echo '====================================================================='
+mkdir -p /var/www/html/pub/fedora/linux/releases/25/Everything/x86_64/
+cd /var/www/html/pub/fedora/linux/releases/25/Everything/x86_64
+echo 'updating '$(pwd)
+#rsync -avh --progress --delete --exclude=debug* rsync://mirror.aarnet.edu.au/pub/fedora/linux/releases/25/Everything/x86_64/ .
+rsync -avh --progress --delete --exclude=debug* rsync://ftp.iinet.net.au/redhat-fedora/releases/25/Everything/x86_64/ .
+chcon -R -t httpd_sys_content_t /var/www/html/pub/fedora/linux/releases/25/Everything
+
+
+echo '====================================================================='
