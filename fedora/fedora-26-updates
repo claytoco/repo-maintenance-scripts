@@ -27,16 +27,16 @@ chcon -R -t httpd_sys_content_t /var/www/html/pub/fedora/linux/updates
 #chcon -R -t httpd_sys_content_t /var/www/html/pub/fedora/linux/releases/26/Workstation
 
 
-#echo '====================================================================='
-#echo '                              SERVER'
-#echo '====================================================================='
-#mkdir -p /var/www/html/pub/fedora/linux/releases/26/Server/x86_64/
-#cd /var/www/html/pub/fedora/linux/releases/26/Server/x86_64
-#echo 'updating '$(pwd)
-#rsync -avh --progress --delete --exclude=debug* rsync://mirror.aarnet.edu.au/pub/fedora/linux/releases/26/Server/x86_64/ .
+echo '====================================================================='
+echo '                              SERVER'
+echo '====================================================================='
+mkdir -p /var/www/html/pub/fedora/linux/releases/26/Server/x86_64/
+cd /var/www/html/pub/fedora/linux/releases/26/Server/x86_64
+echo 'updating '$(pwd)
+rsync -avh --progress --delete --exclude=debug* rsync://mirror.aarnet.edu.au/pub/fedora/linux/releases/26/Server/x86_64/ .
 #rsync -avh --progress --delete --exclude=debug* rsync://ftp.iinet.net.au//pub/fedora/linux/releases/26/Server/x86_64/ .
 #rsync -avh --progress --delete --exclude=debug* rsync://ftp.iinet.net.au/redhat-fedora/releases/26/Server/x86_64/ .
-#chcon -R -t httpd_sys_content_t /var/www/html/pub/fedora/linux/releases/26/Server
+chcon -R -t httpd_sys_content_t /var/www/html/pub/fedora/linux/releases/26/Server
 
 
 echo '====================================================================='
